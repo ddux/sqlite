@@ -32,7 +32,7 @@
   "groupings": {
   },
   "recipes": {
-    "sqlite": "Installs sqlite"
+    "sqlite::default": "Installs sqlite"
   },
   "version": "1.0.1"
 }
