@@ -17,14 +17,16 @@
 # limitations under the License.
 #
 
+log "Installing sqlite for platform: #{ node['platform_family'] }"
 case node['platform_family']
 when "debian"
 
   package "sqlite3"
   package "sqlite3-doc"
 
-when "rhel", "fedora"
+when "rhel", "fedora", "ubuntu"
 
   package 'sqlite-devel'
-
+else 
+  raise "#{ node['platform_family'] } not yet supported"
 end
